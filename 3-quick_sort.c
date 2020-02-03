@@ -1,5 +1,12 @@
 #include "sort.h"
 
+/**
+ * swap - function that swaps two elements
+ * @i: value being swapped
+ * @j: value to swap
+ *
+ * Return: void
+ */
 void swap(int *i, int *j)
 {
 	int s;
@@ -9,6 +16,17 @@ void swap(int *i, int *j)
 	*j = s;
 }
 
+
+/**
+ * partition - function that sorts low values before the pivot and high values
+ * after the pivot
+ * @array: array
+ * @low: low value
+ * @high: high value
+ * @size: size of the array
+ *
+ * Return: the value after the smallest index of the array
+ */
 int partition(int *array, int low, int high, size_t size)
 {
 	int pivot = array[high];
@@ -35,6 +53,16 @@ int partition(int *array, int low, int high, size_t size)
 	return (i + 1);
 }
 
+
+/**
+ * quicksort - function that sorts an array of integers in ascending order
+ * @array: array to be sorted
+ * @low: low value
+ * @high: high value
+ * @size: size of array
+ *
+ * Return: void
+ */
 void quicksort(int *array, int low, int high, size_t size)
 {
 	int part_index;
@@ -48,6 +76,15 @@ void quicksort(int *array, int low, int high, size_t size)
 	}
 }
 
+
+/**
+ * quick_sort - function that sorts an array of integers in ascending order
+ * using the Quick sort algorithm
+ * @array: array
+ * @size: size of the array
+ *
+ * Return: void
+ */
 void quick_sort(int *array, size_t size)
 {
 	quicksort(array, 0, size - 1, size);
